@@ -28,8 +28,8 @@ EXECUTE runstats_pkg.rs_start;
 
 -- UPSERT test
 DECLARE
-TYPE object_types_array IS VARRAY(4) OF VARCHAR2(15);
-object_types object_types_array := object_types_array('TABLE', 'INDEX', 'VIEW', 'TRIGGER');
+  TYPE object_types_array IS VARRAY(4) OF VARCHAR2(15);
+  object_types object_types_array := object_types_array('TABLE', 'INDEX', 'VIEW', 'TRIGGER');
 BEGIN
   FOR i IN 1..4
   LOOP
@@ -92,10 +92,10 @@ EXECUTE runstats_pkg.rs_resume;
 
 -- MERGE test
 DECLARE
-TYPE object_types_array IS VARRAY(3) OF VARCHAR2(15);
-object_types object_types_array := object_types_array('INDEX', 'VIEW', 'TRIGGER');
+  TYPE object_types_array IS VARRAY(4) OF VARCHAR2(15);
+  object_types object_types_array := object_types_array('TABLE', 'INDEX', 'VIEW', 'TRIGGER');
 BEGIN
-  FOR i IN 1..3
+  FOR i IN 1..4
   LOOP
     FOR j IN 1..i
     LOOP
